@@ -12,11 +12,14 @@ The original task: https://github.com/Shoram444/SN_simulation_setup_codes/issues
   
 **As soon as possible to this study will be included some other processes**
 
-# File Navigation
+# Files Navigation
 
-In each **folder with name of the isotope (Se82, Tl208m Bi214 ...)** there are **7** folders with names written in format **<NUMBER>_eve** (e.g. 10pown_eve [n=1...4], n_10pown_eve [n=2,3] ...). Each of such folders contains:
+In each **folder with name of the isotope (Se82, Tl208m Bi214 ...)** there are **7** folders with names written in format **<NUMBER>_eve** (e.g. 10pown_eve [n=1...4], n_10pown_eve [n=2,3] ...). 
+
+**Each of such folders contains:**
 
 - files
+  
   Setup_0nu_Se82.conf ---> simulation configuration setup file
   
   Simu_0nu_Se82.conf  ---> simulation configuration file
@@ -52,8 +55,25 @@ In each **folder with name of the isotope (Se82, Tl208m Bi214 ...)** there are *
 
     **(OPTIONAL)**
   
-  collect_mem.sh
+  collect_mem.sh         --->  produces runtime_raw.txt manually extracting ram for each job in the arbitary selected range of IDs for wich the ..._raw.txt file wasn't created
 
-  collect_runtime.sh
+  collect_runtime.sh     ---> produces memory_raw.txt manually extracting runtime for each job in the arbitary selected range of IDs for wich the ..._raw.txt file wasn't created
 
-These files are **not included** in every **jobs_done** folder because they **are used only in emergency cases** when the jobs were not proceeded properly and **analyze_memory.C or analyze_runtime.C or both didn't work well and memory_fit_results.txt or runtime_fit_results.txt weren't produced automatically by manager.sh**. 
+**!** These files are **not included** in every **jobs_done** folder because they **are used only in emergency cases** when the jobs were not proceeded properly and **runtime_raw.txt or memory_raw.txt weren't produced automatically by manager.sh** and should be added manually. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
