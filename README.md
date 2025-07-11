@@ -10,4 +10,4 @@ The original task: https://github.com/Shoram444/SN_simulation_setup_codes/issues
 * Tl-208 (foil_bulk SOURCE BACKGROUND)
 * Bi-214 (foil_bulk SOURCE BACKGROUND)
   
-Studies for some other processes will be added later
+As soon as possible to this study will be included some other processes
