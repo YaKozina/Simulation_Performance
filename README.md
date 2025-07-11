@@ -9,5 +9,5 @@ The original task: https://github.com/Shoram444/SN_simulation_setup_codes/issues
 * Se-82 2νββ (foil_bulk)
 * Tl-208 (foil_bulk SOURCE BACKGROUND)
 * Bi-214 (foil_bulk SOURCE BACKGROUND)
-
-  Some of the other events will be added later
+  
+Studies for some other processes will be added later
