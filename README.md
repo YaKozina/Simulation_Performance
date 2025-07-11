@@ -12,6 +12,8 @@ The original task: https://github.com/Shoram444/SN_simulation_setup_codes/issues
   
 **As soon as possible to this study will be included some other processes**
 
+The design is not perfect but in future it will be improved to make the software work better and more efficiently
+
 # Files Navigation
 
 In each **folder with name of the isotope (Se82, Tl208m Bi214 ...)** there are:
