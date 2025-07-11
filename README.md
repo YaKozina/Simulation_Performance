@@ -14,7 +14,9 @@ The original task: https://github.com/Shoram444/SN_simulation_setup_codes/issues
 
 # Files Navigation
 
-In each **folder with name of the isotope (Se82, Tl208m Bi214 ...)** there are **7** folders with names written in format **<NUMBER>_eve** (e.g. 10pown_eve [n=1...4], n_10pown_eve [n=2,3] ...). 
+In each **folder with name of the isotope (Se82, Tl208m Bi214 ...)** there are:
+
+**a)** **7** folders with names written in format **<NUMBER>_eve** (e.g. 10pown_eve [n=1...4], n_10pown_eve [n=2,3] ...). 
 
 **Each of such folders contains:**
 
@@ -61,7 +63,17 @@ In each **folder with name of the isotope (Se82, Tl208m Bi214 ...)** there are *
 
 **!** These files are **not included** in every **jobs_done** folder because they **are used only in emergency cases** when the jobs were not proceeded properly and **runtime_raw.txt or memory_raw.txt weren't produced automatically by manager.sh** and should be added manually. 
 
+**b)** 5 more files for proceeding the whole set of jobs to see the graphical dependence of consumed ram on number of events and consumed time on number of events. 
 
+prepare_data_to_txt.sh           ---> extracts from each folder **jobs_done** in each folder **<NUMBER>_eve** data from **<ram/time>_fit_results.txt**
+
+data_for_root.txt                --->
+
+plot_from_txt.C                  --->
+
+events_vs_memory_runtime.png     --->
+
+events_vs_memory_runtime.root    --->
 
 
 
