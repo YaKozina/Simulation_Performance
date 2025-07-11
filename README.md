@@ -29,6 +29,7 @@ In each **folder with name of the isotope (Se82, Tl208m Bi214 ...)** there are *
   which **contains the most important information** about the process for the corresponding number of events. In each folder **jobs_done** is located the set of files with the following names      and meanings:
 
    **(STANDART)**
+  
   memory_raw.txt          ---> file with the list of values of used memory for each job with corresponding ID (**seff id | grep "Memory Utilized"**) proceeded by **manages.sh** & **send_0nu.sh**
 
   runtime_raw.txt         ---> file with the list of values of runtime for each job with corresponding ID proceeded by **manages.sh** & **send_0nu.sh**  
@@ -50,7 +51,8 @@ In each **folder with name of the isotope (Se82, Tl208m Bi214 ...)** there are *
   memory_hist.png         ---> the viewable picture of the histogram  
 
     **(OPTIONAL)**
-    collect_mem.sh
+  
+  collect_mem.sh
 
   collect_runtime.sh
 
