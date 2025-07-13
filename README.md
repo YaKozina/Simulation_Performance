@@ -2,7 +2,7 @@
 Quantify computation requirements (time, memory) for simulation
 
 The original task: https://github.com/Shoram444/SN_simulation_setup_codes/issues/1
-
+My task: https://github.com/YaKozina/study_Falaise/issues/1
 **At this moment (July 2025) there are available results for such processes:**
 
 * Se-82 0νββ (foil_bulk)
@@ -10,7 +10,7 @@ The original task: https://github.com/Shoram444/SN_simulation_setup_codes/issues
 * Tl-208 (foil_bulk SOURCE BACKGROUND)
 * Bi-214 (foil_bulk SOURCE BACKGROUND)
   
-**As soon as possible to this study will be included some other processes**
+**As soon as possible to this study may be included some other processes**
 
 The design is not perfect but in future it will be improved to make the software work better and more efficiently
 
@@ -65,17 +65,17 @@ In each **folder with name of the isotope (Se82, Tl208m Bi214 ...)** there are:
 
 **!** These files are **not included** in every **jobs_done** folder because they **are used only in emergency cases** when the jobs were not proceeded properly and **runtime_raw.txt or memory_raw.txt weren't produced automatically by manager.sh** and should be added manually. 
 
-**b)** 5 more files for proceeding the whole set of jobs to see the graphical dependence of consumed ram on number of events and consumed time on number of events. 
+**b)** **5** more files for proceeding the whole set of jobs to see the graphical dependence of consumed RAM on number of events and consumed time on number of events: 
 
 prepare_data_to_txt.sh           ---> extracts from each folder **jobs_done** in each folder **<NUMBER>_eve** data from **<ram/time>_fit_results.txt**
 
-data_for_root.txt                --->
+data_for_root.txt                ---> file with all extracted data for all numbers of evets per job where 1st column stands for the number of events/job, 2nd - mean value of used RAM, 3rd - std deviation of RAM, 4th - mean value of  runtime, 5th - std deviation of the runtime
 
-plot_from_txt.C                  --->
+plot_from_txt.C                  ---> script for making root plot **events_vs_memory_runtime.png**  
 
-events_vs_memory_runtime.png     --->
+events_vs_memory_runtime.png     ---> plots for both runtime and RAM depending on the number of events and fitting
 
-events_vs_memory_runtime.root    --->
+events_vs_memory_runtime.root    ---> proceeded by **plot_from_txt.C**
 
 
 
