@@ -2,7 +2,9 @@
 Quantify computation requirements (time, memory) for simulation
 
 The original task: https://github.com/Shoram444/SN_simulation_setup_codes/issues/1
+
 My task: https://github.com/YaKozina/study_Falaise/issues/1
+
 **At this moment (July 2025) there are available results for such processes:**
 
 * Se-82 0νββ (foil_bulk)
