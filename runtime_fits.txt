@@ -1,0 +1,12 @@
+RUNTIME fit for Se82 bb-2nu:
+  Slope (b) = 0.0959184 +/- 0.0052373
+  Intercept (a) = 11.1341 +/- 8.85822
+RUNTIME fit for Se82 bb-0nu:
+  Slope (b) = 0.143574 +/- 0.00808068
+  Intercept (a) = 1.50458 +/- 4.00597
+RUNTIME fit for Tl208 bg:
+  Slope (b) = 0.0574772 +/- 0.00443791
+  Intercept (a) = 10.9206 +/- 12.4294
+RUNTIME fit for Bi214 bg:
+  Slope (b) = 0.0503942 +/- 0.00360569
+  Intercept (a) = 12.9564 +/- 8.88873
