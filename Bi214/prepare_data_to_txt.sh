@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OUT="data_for_root.txt"
-> "$OUT"  # ???????? ????
+> "$OUT"  
 
 for dir in *_eve; do
     jobdir="${dir}/jobs_done"
@@ -26,6 +26,7 @@ for dir in *_eve; do
         continue
     fi
 
-    echo -e "$events\t$mem_mean\t$mem_err\t$run_mean\t$run_err" >> "$OUT"
+printf "%-10d %-12.3f %-12.3f %-12.3f %-12.3f\n" "$events" "$mem_mean" "$mem_err" "$run_mean" "$run_err" >> "$OUT"
+
 done
 

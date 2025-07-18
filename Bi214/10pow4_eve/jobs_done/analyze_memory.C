@@ -25,7 +25,7 @@ int n_events=10000;
     double min = *std::min_element(values.begin(), values.end());
     double max = *std::max_element(values.begin(), values.end());
 
-    auto h = new TH1D("h_memory", "Memory Usage;Memory [MB];Entries", 500, min - 1, max + 1);
+    auto h = new TH1D("h_memory", "Memory Usage;Memory [MB];Entries", 50, min - 1, max + 1);
     for (auto v : values) h->Fill(v);
 
     int max_bin = h->GetMaximumBin();

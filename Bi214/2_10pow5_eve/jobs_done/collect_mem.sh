@@ -1,7 +1,7 @@
 #!/bin/bash
 
-START=65368124
-END=65368229
+START=66698992
+END=66699117
 OUTPUT="memory_raw.txt"
 
 echo -e "Index\tJobID\tMemory_MB" > "$OUTPUT"
@@ -15,10 +15,10 @@ for ((jobid=START; jobid<=END; jobid++)); do
         value=$(echo "$mem_line" | awk '{print $3}')
         unit=$(echo "$mem_line" | awk '{print $4}')
 
-        # Конвертація в мегабайти
+        # ??????????? ? ?????????
         case "$unit" in
             KB) value=$(awk "BEGIN {print $value/1024}") ;;
-            MB) ;;  # залишити як є
+            MB) ;;  # ???????? ?? ?
             GB) value=$(awk "BEGIN {print $value*1024}") ;;
             *) value="UNKNOWN" ;;
         esac
@@ -31,5 +31,5 @@ for ((jobid=START; jobid<=END; jobid++)); do
     ((index++))
 done
 
-echo "✅ $OUTPUT"
+echo "? $OUTPUT"
 
