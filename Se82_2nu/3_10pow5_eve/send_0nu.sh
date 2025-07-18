@@ -16,7 +16,8 @@ snswmgr_load_setup falaise@5.1.2
 OUT_BASE="/sps/nemo/scratch/ykozina/Falaise/tutorial/2nu/3_10pow5_eve/jobs_done"
 OUT_DIR="$OUT_BASE/job_$INDEX"
 RUNTIME_FILE="$OUT_BASE/runtime_raw.txt"
-
+FLSIMU_runtime="$OUT_BASE/FLSIMU_runtime_raw.txt"
+FLRECO_runtime="$OUT_BASE/FLRECO_runtime_raw.txt"
 mkdir -p "$OUT_DIR"
 
 SIM_FILE="$OUT_DIR/Simu_2nu_Se82_${INDEX}.brio"
@@ -28,6 +29,9 @@ start_time=$(date +%s)
     -c /sps/nemo/scratch/ykozina/Falaise/tutorial/2nu/3_10pow5_eve/Simu_2nu_Se82.conf \
     -o "$SIM_FILE"
 
+
+mid_time_FLSIMU=$(date +%s)
+
 /sps/nemo/sw/redhat-9-x86_64/snsw/opt/falaise-5.1.2/bin/flreconstruct \
     -i "$SIM_FILE" \
     -p /sps/nemo/sw/Falaise/install_develop/share/Falaise-4.1.0/resources/snemo/demonstrator/reconstruction/official-2.0.0.conf \
@@ -35,7 +39,9 @@ start_time=$(date +%s)
 
 end_time=$(date +%s)
 runtime=$((end_time - start_time))
+flsimu_time=$((mid_time_FLSIMU - start_time))
+flreco_time=$((end_time - mid_time_FLSIMU))
 
-# записуємо час у загальний файл
 echo -e "$INDEX\t$SLURM_JOB_ID\t$runtime" >> "$RUNTIME_FILE"
-
+echo -e "$INDEX\t$SLURM_JOB_ID\t$flsimu_time" >> "$FLSIMU_runtime"
+echo -e "$INDEX\t$SLURM_JOB_ID\t$flreco_time" >> "$FLRECO_runtime"
