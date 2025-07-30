@@ -6,12 +6,54 @@ My task: https://github.com/YaKozina/study_Falaise/issues/1
 
 **At this moment (July 2025), results are available for the following processes:**
 
-* Se-82 0νββ (foil_bulk)  
-* Se-82 2νββ (foil_bulk)  
-* Tl-208 (foil_bulk SOURCE BACKGROUND)  
-* Bi-214 (foil_bulk SOURCE BACKGROUND)  
+* `Se-82 0νββ (foil_bulk)`  
+* `Se-82 2νββ (foil_bulk)`  
+* `Tl-208 (foil_bulk SOURCE BACKGROUND)`  
+* `Bi-214 (foil_bulk SOURCE BACKGROUND)`  
 
 To this study may be included some other processes. The design is not perfect but in future it may be improved to make the software work better and more efficiently.
+
+---
+
+## Purpose of the Study
+
+This study investigates how the required **RAM** and **execution runtime** depend on the number of simulated and reconstructed (`flsimulate + flreconstruct`) events for different physics processes on a computing cluster. 
+
+---
+## Methodology
+
+To analyze resource usage patterns, there were run multiple simulations with reconstructions with varying numbers of events (e.g. `100, 10000, 50000, 100000,  150000, 200000, 250000 and 300000` events). For each configuration, **100 jobs were submitted in parallel** to gather statistics on RAM and runtime consumption.
+
+---
+
+## Methodological Considerations
+
+It was assumed that the dependence of required resources on the number of events is **linear** — `y = a * x + b`, where `y` is RAM or runtime and `x` is the number of events per job. This is because each additional event contributes a roughly constant computational and memory load.
+
+Previous tests (now removed, but visible in the history of the repository and also below) showed that considering the results of simulations with fewer than `1000` events per task is not informative because the dependence is far from linear and looks like saturation (see the picture from the previous study below — left includes points `100, 1000, 2500, 5000 and 10000` and right includes all the previous and `200000` and `300000`) which could be described by a logarithmic function in areas with a small number of events. However, when a large number of events (`200000 & 300000`) is included, the dependence becomes linear. In this case, the area with a small number of events (`100-10000`) ceases to be informative because it becomes noise that spoils the fit. Therefore, the study was repeated without including small numbers of events, such as `100–1000`, and the working range was chosen as `10000–300000`. In this approximation, the dependence is very close to linear. However, to achieve a high-quality fit, it is necessary to include the point `100`. During the approximation, which is crucial for time, the fit was poor due to extrapolation to `0`. This left uncertainty in the shift coefficient `b`. 
+
+
+<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/7aa2f959-4d95-4b1e-ae0c-21471f70618f" /> 
+<img width="420" height="350" alt="image_2025-07-30_18-35-56" src="https://github.com/user-attachments/assets/417a0ebf-a797-4321-ac88-1e8c00968a69" />
+
+
+---
+
+## Final Approach
+
+To focus on the linear model:
+
+- Only jobs with **≥10000 events** were included in the main analysis.
+- One job with **100 events** was added solely to improve the fit quality when extrapolating to low event counts, particularly to stabilize the offset term `b` in a linear model:
+  `y = a * x + b`.
+
+This `100`-event point was **not** used to improve statistical reliability — it served only to reduce uncertainty in extrapolated fits.
+
+To better understand variability, there are also included **histograms of consumed RAM and runtime distributions** for each process. This is crucial for better understading of the results of the study because:
+
+- Many distributions are **non-Gaussian** and are far from gomogenious and the pattern can not be seen
+- The shapes of the distribution can be influenced by the specific behavior of the cluster 
+- Therefore, to obtain every the experimental point which are presented on the graph `Memory_Runtime_vs_Events.png` there was used the **arithmetic mean values** instead of Gaussian fit mean values
 
 ---
 
